@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://rasedul20:rasedul20@telegramcluster.xfaz1rx.mong
 .then((d) => console.log('Database connected'))
 .catch((e) => console.log(e))
 
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf('5778440630:AAHUx8xYvPy-3UFrxJtDkTfWXyLAVhtYutY')
 
 bot.start(ctx => {
   console.log("Received /start command")
@@ -29,7 +29,7 @@ bot.start(ctx => {
 })
 
 bot.command('test',ctx=>{
-  ctx.reply("This is test command")
+  ctx.reply("This is test command not from db")
 })
 
 bot.command('testdb',ctx=>{
@@ -50,3 +50,5 @@ exports.handler = async event => {
     return { statusCode: 400, body: "This endpoint is meant for bot and telegram communication" }
   }
 }
+
+// bot.launch()
