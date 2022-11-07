@@ -9,14 +9,14 @@ const s = new mongoose.Schema({
 
 const testModel = mongoose.model('test',s)
 
-mongoose.connect('mongodb+srv://rasedul20:rasedul20@telegramcluster.xfaz1rx.mongodb.net/sdBot', {
+mongoose.connect(process.env.DB, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
 .then((d) => console.log('Database connected'))
 .catch((e) => console.log(e))
 
-const bot = new Telegraf('5778440630:AAHUx8xYvPy-3UFrxJtDkTfWXyLAVhtYutY')
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start(ctx => {
   return ctx.reply('hi')
