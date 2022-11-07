@@ -11,6 +11,10 @@ bot.start(ctx => {
   }
 })
 
+bot.command('test',ctx=>{
+  ctx.reply("This is test command")
+})
+
 exports.handler = async event => {
   try {
     await bot.handleUpdate(JSON.parse(event.body))
