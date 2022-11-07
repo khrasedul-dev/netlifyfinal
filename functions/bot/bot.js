@@ -19,13 +19,7 @@ mongoose.connect('mongodb+srv://rasedul20:rasedul20@telegramcluster.xfaz1rx.mong
 const bot = new Telegraf('5778440630:AAHUx8xYvPy-3UFrxJtDkTfWXyLAVhtYutY')
 
 bot.start(ctx => {
-  console.log("Received /start command")
-  try {
-    return ctx.reply("Hi")
-  } catch (e) {
-    console.error("error in start action:", e)
-    return ctx.reply("Error occured")
-  }
+  return ctx.reply('hi')
 })
 
 bot.command('test',ctx=>{
@@ -35,7 +29,7 @@ bot.command('test',ctx=>{
 bot.command('testdb',ctx=>{
   testModel.find()
   .then(data=>{
-    ctx.reply(data[0].msg)
+    return ctx.reply(data[0].msg)
   })
   .catch(e=>console.log(e))
 })
