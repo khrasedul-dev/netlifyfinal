@@ -32,7 +32,7 @@ bot.command('test',ctx=>{
   ctx.reply("This is test command")
 })
 
-bot.command('test',ctx=>{
+bot.command('testdb',ctx=>{
   testModel.find()
   .then(data=>{
     ctx.reply(data[0].msg)
